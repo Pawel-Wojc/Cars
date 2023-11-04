@@ -1,0 +1,14 @@
+.div-left{
+    background: rgb(88, 214, 225);
+    width: 50%;
+    float: left;
+  }
+  .div-right{
+    background: rgb(97, 230, 190);
+    float: right;
+    width: 50%;
+  }
+  .div-root{
+    
+
+  }

@@ -3,7 +3,10 @@ export default interface Car {
     brand: string
     model: string
     dorsNumber: number
-    lagguageCapacity: number
+    lagguageCapacity: string
     engineCapacity :number
-    fuelType: string
+    fuelType: number
+    productionDate: Date
+    carFuelConsumption: number
+    bodyType: number
 }
