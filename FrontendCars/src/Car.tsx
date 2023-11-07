@@ -2,8 +2,8 @@ export default interface Car {
     id: string
     brand: string
     model: string
-    dorsNumber: number
-    lagguageCapacity: string
+    doorsNumber: number
+    luggageCapacity: number
     engineCapacity :number
     fuelType: number
     productionDate: Date

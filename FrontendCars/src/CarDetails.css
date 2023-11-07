@@ -1,14 +1,25 @@
-.div-left{
-    background: rgb(88, 214, 225);
-    width: 50%;
-    float: left;
-  }
-  .div-right{
-    background: rgb(97, 230, 190);
-    float: right;
-    width: 50%;
-  }
-  .div-root{
-    
+/* .details{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0,0, 0.2);
 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-inner{
+position: relative;
+padding: 32px;
+width: 100%;
+max-width: 640px;
+background-color: #fff;
+}
+
+.details-inner .return-btn{
+  position: absolute;
+  top:16px;
+  right: 16px;
+} */

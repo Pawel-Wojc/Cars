@@ -1,72 +1,22 @@
-import Car from "./Car"
+import React from "react";
 import './CarDetails.css';
+import Car from "./Car";
 import { Button, Table } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useEffect, useState, ChangeEvent } from 'react';
 
-interface Props {
-    cars: Car[]
-    selectedCar: Car | undefined;
-
+function CarDetails(props: { car:  Car | undefined ;trigger: any; setTrigger: (arg0: boolean) => void } ){
+    return (props.trigger) ? (<div className="details">
+        <div className="details-inner"></div>
+        <Button className="return-btn" onClick={() => props.setTrigger (false)}>Hide </Button>
+        <h4>Brand: {props.car?.brand} </h4> 
+        <h4>Model: {props.car?.model}</h4>
+        <h4>Dors number: {props.car?.doorsNumber}</h4>
+        <h4>Lagguage capacity: {props.car?.luggageCapacity}</h4>
+        <h4>Engine Capacity: {props.car?.engineCapacity}</h4>
+        <h4>Fuel type: {props.car?.fuelType}</h4>
+        <h4>Fuel consumption: {props.car?.carFuelConsumption}</h4>
+        <h4>Body type: {props.car?.bodyType}</h4>
+        
+    </div>): (<></>)
+    
 }
-
-export default function CarList({ cars }: Props) {
-    const [car, setCar] = useState<Car>();
-    const detailsHandler = () => {
-
-        return (
-            <></>
-        )
-    }
-
-    const deleteHanddler = () => {
-
-        return (<></>)
-    }
-
-    return (
-        <div className="div-root">
-            <div className="{div-left}">
-            <Table className="table" striped bordered hover>
-                <thead thead-dark>
-                    <tr>
-                        <th>#</th>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        {/* <th>Dors number</th>
-                        <th>Lagguage</th>
-                        <th>Engine</th>
-                        <th>Fuel Type</th>
-                        <th>Production date</th> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    {cars.map((car, index) => (
-                            <tr>  
-                                <td>{index +1}</td>                       
-                                <td>{car.brand}</td>
-                                <td>{car.model}</td>
-                                {/* <td>{car.dorsNumber}</td>
-                                <td>{car.lagguageCapacity}</td>
-                                <td>{car.engineCapacity}</td>
-                                <td>{car.fuelType}</td> */}
-                                <Button onClick={detailsHandler}>Details</Button>
-                                <Button >Delete</Button>
-                            </tr>
-                            
-                        ))
-                    }
-                </tbody>
-
-
-            </Table>
-
-            </div>
-            <div className="div-right">
-                ASd
-            </div>
-
-
-        </div>
-    )
-}
+export default CarDetails;
