@@ -23,45 +23,41 @@ export default function CarList({ cars, setCars }: Props) {
    
     
     
-    // const deleteHandler = (e:any , car: Car) => {  //deleting items
-    //     console.log(car.id);
-    //     const res = axios.delete('https://localhost:7265/api/cars/'+car.id);
-    //     setCars(cars.filter(car => car.id!== car.id));
-    //     console.log(res);
-    //     return (<></>)
-    // }
+    const deleteHandler = ( car: Car) => {  //deleting items
+        
+        const res = axios.delete('https://localhost:7265/api/cars/'+car.id);
+        setCars(cars.filter(carold => carold!== car));
+    }
 
-    function detailsHandler(event:any , car: Car){     
+    function detailsHandler(event:any , car: Car){
         setCar(car)
         setEditShow(false);
-        setDetailsShow(true);
-        
-        return (<></>)
+        setDetailsShow(true);   
     }
     function editHandler(event:any , car: Car){  
-        console.log(car.id);
+        car.productionDate = new Date(car.productionDate.toString());
         setCar(car)
         setDetailsShow(false);
         setEditShow(true);
         
-        return (<></>)
+      
     }
 
-    // function createHandler(event:any){  
-    //     setCar(undefined)
-    //     setDetailsShow(false);
-    //     setEditShow(false);  
-    //     setEditShow(true);    
+    function createHandler(event:any){  
+        setCar(undefined)
+        setDetailsShow(false);
+        setEditShow(false);  
+        setEditShow(true);    
 
-    //     return (<></>)
-    // }
+        return (<></>)
+    }
 
     return (
         <div className="container">
             
                 
                 <div className="list">
-                {/* <Button onClick={event  => createHandler(event)}>New</Button>  */}
+                <Button onClick={event  => createHandler(event)}>New</Button> 
                 {cars.map((car, index) => (
                         <div>
                             <div className="list1">
@@ -72,7 +68,7 @@ export default function CarList({ cars, setCars }: Props) {
                             <div className="list2">
                                 <Button onClick={event  => editHandler(event, car)}>Edit</Button>  
                                 <Button onClick={event => detailsHandler(event,car)}>Details</Button>
-                                {/* <Button onClick={event  => deleteHandler(event, car)}>Delete</Button>                           */}
+                                <Button onClick={()  => deleteHandler(car)}>Delete</Button>
                             </div>                                      
                         </div>
                                   

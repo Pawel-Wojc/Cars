@@ -9,7 +9,7 @@ function App() {
 
   useEffect (()=> {
     axios.get<Car[]>('https://localhost:7265/api/cars')
-    .then(response => {console.log(response.data); setCars(response.data) })
+    .then(response => { setCars(response.data) })
   }, [])
 
   return (

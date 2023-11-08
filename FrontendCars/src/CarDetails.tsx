@@ -2,6 +2,7 @@ import React from "react";
 import './CarDetails.css';
 import Car from "./Car";
 import { Button, Table } from 'react-bootstrap';
+import { date } from "yup";
 
 function CarDetails(props: { car:  Car | undefined ;trigger: any; setTrigger: (arg0: boolean) => void } ){
     return (props.trigger) ? (<div className="details">
@@ -13,6 +14,7 @@ function CarDetails(props: { car:  Car | undefined ;trigger: any; setTrigger: (a
         <h4>Lagguage capacity: {props.car?.luggageCapacity}</h4>
         <h4>Engine Capacity: {props.car?.engineCapacity}</h4>
         <h4>Fuel type: {props.car?.fuelType}</h4>
+        <h4>Production date {props.car?.productionDate.toString()}</h4>
         <h4>Fuel consumption: {props.car?.carFuelConsumption}</h4>
         <h4>Body type: {props.car?.bodyType}</h4>
         
