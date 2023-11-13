@@ -96,11 +96,11 @@ export default function CarList({ cars, setCars }: Props) {
     }
 
     return (
-        <div className="container">
+        <div className="container bg-stone-500">
             
                 
                 <div className="list">
-                <Button onClick={event  => createHandler(event)}>New</Button> 
+                <button className="rounded-full bg-green-100 w-20 hover:bg-green-300" onClick={event  => createHandler(event)}>New</button> 
                 {cars.map((car, index) => (
                         <div>
                             <div className="list1">
@@ -109,9 +109,9 @@ export default function CarList({ cars, setCars }: Props) {
                                 {" " + car.model}
                             </div>
                             <div className="list2">
-                                <Button onClick={event  => editHandler(event, car)}>Edit</Button>  
-                                <Button onClick={event => detailsHandler(event,car)}>Details</Button>
-                                <Button onClick={()  => deleteHandler(car)}>Delete</Button>
+                                <button className="rounded-full bg-blue-100 w-20 hover:bg-blue-300"onClick={event  => editHandler(event, car)}>Edit</button>  
+                                <button  className="rounded-full bg-blue-100 w-20 hover:bg-blue-300" onClick={event => detailsHandler(event,car)}>Details</button>
+                                <button className="rounded-full bg-red-100 w-20 hover:bg-red-300" onClick={()  => deleteHandler(car)}>Delete</button>
                             </div>                                      
                         </div>
                                   

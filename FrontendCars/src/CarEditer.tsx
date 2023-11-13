@@ -96,11 +96,12 @@ function CarEditer(props: { car: Car ; trigger: any; setTrigger: (arg0: boolean)
     }
     const  handleLuggageCapacityChange = (event) => {
         const parsedNumber = parseFloat(event.target.value);
-        setLuggageCapacity(isNaN(parsedNumber)? 50 : parsedNumber);
+        setLuggageCapacity(isNaN(parsedNumber)? 0 : parsedNumber);
     }
     const  handleEngineCapacityChange = (event) => {
-        const parsedNumber = parseFloat(event.target.value);
-        setEngineCapacity(isNaN(parsedNumber)? 100 : parsedNumber);
+        //const parsedNumber = parseFloat(event.target.value);
+        // setEngineCapacity(isNaN(parsedNumber)? 100 : parsedNumber);
+        setEngineCapacity(event.target.value);
     }
     const  handleFuelTypeChange = (event) => {
         const parsedNumber = parseInt(event.target.value);
@@ -119,7 +120,7 @@ function CarEditer(props: { car: Car ; trigger: any; setTrigger: (arg0: boolean)
     
    return (props.trigger) ? (<div className="editer">
         <div className="details-inner"></div>
-        <Button className="return-btn" onClick={() => props.setTrigger(false)}>Hide </Button>
+        <button className="rounded-full bg-blue-100 w-20 hover:bg-blue-300" onClick={() => props.setTrigger(false)}>Hide </button>
         {/* <Button className="return-btn" onClick={onSubmit}>Submit </Button> */}
         {/* <form onSubmit={handleSubmit(onSubmit)}> */}
         <form onSubmit={onSubmit}>
@@ -181,7 +182,7 @@ function CarEditer(props: { car: Car ; trigger: any; setTrigger: (arg0: boolean)
             {/* <input   {...register("bodytype")} value={bodyType} onChange={handleBodyTypeChange}></input> */}
             {/* <p>{errors.bodytype?.message}</p> */}
 
-            <input type='submit' /><br />
+            <input type='submit' className="rounded-full bg-blue-100 w-20 hover:bg-blue-300"/><br />
 
         </form>
         
